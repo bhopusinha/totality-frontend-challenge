@@ -10,7 +10,7 @@ const userRegister = (formData) => async (dispatch) => {
             type: USER_REGISTER_REQUEST
         })
 
-        const { data } = await axios.post(`http://localhost:4000/api/user`, formData);
+        const { data } = await axios.post(`https://totality-frontend-challenge-76zf.onrender.com/api/user`, formData);
 
         dispatch({
             type: USER_REGISTER_SUCCESS,
@@ -33,7 +33,7 @@ const loginRequest = (email, password) => async (dispatch) => {
             type: USER_LOGIN_REQUEST
         })
 
-        const { data } = await axios.post(`http://localhost:4000/api/user/login`, { email, password });
+        const { data } = await axios.post(`https://totality-frontend-challenge-76zf.onrender.com/api/user/login`, { email, password });
 
         dispatch({
             type: USER_LOGIN_SUCCESS,
@@ -62,7 +62,7 @@ const loadUser = () => async (dispatch) => {
             },
         };
 
-        const { data } = await axios.get('http://localhost:4000/api/user', config);
+        const { data } = await axios.get('https://totality-frontend-challenge-76zf.onrender.com/api/user', config);
 
         dispatch({ type: USER_LOAD_SUCCESS, payload: data })
 
