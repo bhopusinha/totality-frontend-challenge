@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadUser } from '../redux/userActions';
-// import { logoutUser } from '../redux/userActions'; // Ensure you have a logout action defined
 
 const Navbar = () => {
     const [showLogout, setShowLogout] = useState(false);
@@ -13,10 +12,6 @@ const Navbar = () => {
         localStorage.setItem('token',null);
         dispatch(loadUser());
     };
-
-    useEffect(()=>{
-      console.log(user);
-    },[])
 
     const toggleLogoutMenu = () => {
         setShowLogout((prevShowLogout) => !prevShowLogout);
@@ -31,12 +26,12 @@ const Navbar = () => {
                     </div>
                     <div className="ml-3 relative">
                         <div
-                            className="cursor-pointer"
+                            className="cursor-pointer flex-col text-center justify-center items-center"
                             onClick={toggleLogoutMenu}
                         >
                             <img
                                 className="h-10 w-10 rounded-full"
-                                src={`http://localhost:4000/images/${user.user.image}`} // Replace with your avatar source
+                                src={`https://totality-frontend-challenge-76zf.onrender.com/images/${user.user.image}`} 
                                 alt="Avatar"
                             />
                             <p className="text-sm font-medium text-gray-300 hover:text-white">{user.user.name}</p>

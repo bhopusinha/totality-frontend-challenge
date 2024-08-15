@@ -1,6 +1,5 @@
-// src/redux/store.js
 import { createStore, applyMiddleware } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import {composeWithDevTools} from '@redux-devtools/extension';
 import { thunk } from 'redux-thunk'; // Middleware for handling async actions
 import { combineReducers } from 'redux';
 
@@ -13,7 +12,7 @@ const rootReducer = combineReducers({
 });
 
 const middelware=[thunk]
-
+s
 const store = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(...middelware))
